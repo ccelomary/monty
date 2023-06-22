@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -44,7 +45,7 @@ void print_stack(const stack_t *, int);
 int stack_length(const stack_t *);
 /* utils */
 int _isdigit(const char *);
-
+void putnumber(long int n);
 /* instructions */
 void push(stack_t **, unsigned int,
 		  __attribute__((__unused__)) const char *);

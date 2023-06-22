@@ -15,7 +15,7 @@ void print_stack(const stack_t *st, int n)
 	iterator = 0;
 	while (st && (n == -1 || iterator < n))
 	{
-		printf("%d\n", st->n);
+		putnumber(st->n);
 		st = st->next;
 		iterator++;
 	}

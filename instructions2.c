@@ -15,7 +15,7 @@ void add(stack_t **stack, unsigned int line_number,
 
 	if (stack_length(*stack) < 2)
 	{
-		fprintf(stderr, "L<%u>: can't add, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
@@ -41,14 +41,14 @@ void sub(stack_t **stack, unsigned int line_number,
 
 	if (stack_length(*stack) < 2)
 	{
-		fprintf(stderr, "L<%u>: can't sub, stack too short\n",
+		fprintf(stderr, "L%u: can't sub, stack too short\n",
 				line_number);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
 	a = pop_stack(stack);
 	b = pop_stack(stack);
-	push_stack(stack, a->n - b->n);
+	push_stack(stack, b->n - a->n);
 	free(a);
 	free(b);
 }
@@ -70,7 +70,7 @@ void _div(stack_t **stack, unsigned int line_number,
 
 	if (stack_length(*stack) < 2)
 	{
-		fprintf(stderr, "L<%u>: can't div, stack too short\n",
+		fprintf(stderr, "L%u: can't div, stack too short\n",
 				line_number);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
@@ -85,7 +85,7 @@ void _div(stack_t **stack, unsigned int line_number,
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	push_stack(stack, a->n / b->n);
+	push_stack(stack, b->n / a->n);
 	free(a);
 	free(b);
 }
@@ -146,7 +146,7 @@ void mod(stack_t **stack, unsigned int line_number,
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	push_stack(stack, a->n % b->n);
+	push_stack(stack, b->n % a->n);
 	free(a);
 	free(b);
 }

@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int line_number,
 {
 	if (!_isdigit(s))
 	{
-		fprintf(stderr, "L<%u>: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
@@ -50,7 +50,7 @@ void pint(stack_t **stack, unsigned int line_number,
 {
 	if (!*stack)
 	{
-		fprintf(stderr, "L<%u>: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
@@ -71,7 +71,7 @@ void pop(stack_t **stack, unsigned int line_number,
 
 	if (!*stack)
 	{
-		fprintf(stderr, "L<%u>: can't pop an empty stack\n", line_number);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
@@ -95,7 +95,7 @@ void swap(stack_t **stack, unsigned int line_number,
 
 	if (stack_length(*stack) < 2)
 	{
-		fprintf(stderr, "L<%u>: can't swap, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
