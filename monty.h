@@ -1,7 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-#define OPTCODE_LENGTH 7
+#define OPTCODE_LENGTH 11
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -53,11 +53,10 @@ void pop(stack_t **, unsigned int line_number, __attribute__((__unused__)) const
 void swap(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
 void add(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
 void sub(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
-void div(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
+void _div(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
 void mul(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
 void mod(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
-void comments(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
 
 /* monty */
-void monty(FILE *file, stack_t **stack);
+void monty(FILE *file, stack_t **stack, instruction_t instructions[]);
 #endif

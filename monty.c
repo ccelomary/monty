@@ -7,19 +7,13 @@
  *
  * @file: file to read instructions from
  * @stack: stack to apply the instructions to
+ * @instructions: array that contains all possible instruction and
+ * it's correspondant functions
  */
-void monty(FILE *file, stack_t **stack)
+void monty(FILE *file, stack_t **stack, instruction_t instructions[])
 {
 	char opcode[100], buffer[1000];
 	unsigned int index, line;
-	instruction_t instructions[] = {
-		{"push", push},
-		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"add", add},
-		{"nop", NULL}};
 
 	line = 1;
 	while (!feof(file))
