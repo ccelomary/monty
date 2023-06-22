@@ -52,6 +52,12 @@ void pint(stack_t **, unsigned int line_number, __attribute__((__unused__)) cons
 void pop(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
 void swap(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
 void add(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
+void sub(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
+void div(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
+void mul(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
+void mod(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
+void comments(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
+
 /* monty */
 void monty(FILE *file, stack_t **stack);
 #endif
