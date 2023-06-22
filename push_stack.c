@@ -21,6 +21,8 @@ stack_t *push_stack(stack_t **stack, int num)
 	new_node->n = num;
 	new_node->prev = NULL;
 	new_node->next = *stack;
+	if (*stack)
+		(*stack)->prev = new_node;
 	*stack = new_node;
 	return (new_node);
 }

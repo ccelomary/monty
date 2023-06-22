@@ -12,24 +12,22 @@
  */
 void monty(FILE *file, stack_t **stack, instruction_t instructions[])
 {
-	char opcode[100], buffer[1000];
+	char buffer[1000], *opcode;
 	unsigned int index, line;
 
 	line = 1;
 	while (!feof(file))
 	{
-		memset(opcode, 0, sizeof(char) * 100);
 		memset(buffer, 0, sizeof(char) * 1000);
-		fscanf(file, "%s", opcode);
-		if (!strcmp(opcode, "push"))
-			fscanf(file, "%s\n", buffer);
+		fscanf(file, "%[^\n]%*c", buffer);
 		index = 0;
+		opcode = strtok(buffer, " \t");
 		while (index < OPTCODE_LENGTH)
 		{
 			if (!strcmp(instructions[index].opcode, opcode))
 			{
 				if (instructions[index].f)
-					instructions[index].f(stack, line, buffer);
+					instructions[index].f(stack, line, strtok(NULL, " \t"));
 				break;
 			}
 			index++;

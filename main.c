@@ -38,5 +38,6 @@ int main(int ac, char **av)
 	}
 	monty(file, &stack, instructions);
 	fclose(file);
+	free_stack(&stack);
 	return (EXIT_SUCCESS);
 }

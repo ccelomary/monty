@@ -11,6 +11,8 @@ int _isdigit(const char *s)
 	int sign;
 
 	sign = 0;
+	if (!s || !*s)
+		return (0);
 	while (*s)
 	{
 		if (*s == '+' || *s == '-')

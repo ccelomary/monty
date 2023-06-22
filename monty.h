@@ -46,16 +46,26 @@ int stack_length(const stack_t *);
 int _isdigit(const char *);
 
 /* instructions */
-void push(stack_t **, unsigned int, __attribute__((__unused__)) const char *);
-void pall(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
-void pint(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
-void pop(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
-void swap(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
-void add(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
-void sub(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
-void _div(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
-void mul(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
-void mod(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
+void push(stack_t **, unsigned int,
+		  __attribute__((__unused__)) const char *);
+void pall(stack_t **, unsigned int line_number,
+		  __attribute__((__unused__)) const char *);
+void pint(stack_t **, unsigned int line_number,
+		  __attribute__((__unused__)) const char *);
+void pop(stack_t **, unsigned int line_number,
+		 __attribute__((__unused__)) const char *);
+void swap(stack_t **, unsigned int line_number,
+		  __attribute__((__unused__)) const char *);
+void add(stack_t **, unsigned int line_number,
+		 __attribute__((__unused__)) const char *);
+void sub(stack_t **, unsigned int line_number,
+		 __attribute__((__unused__)) const char *);
+void _div(stack_t **, unsigned int line_number,
+		  __attribute__((__unused__)) const char *);
+void mul(stack_t **, unsigned int line_number,
+		 __attribute__((__unused__)) const char *);
+void mod(stack_t **, unsigned int line_number,
+		 __attribute__((__unused__)) const char *);
 
 /* monty */
 void monty(FILE *file, stack_t **stack, instruction_t instructions[]);
