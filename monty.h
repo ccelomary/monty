@@ -1,6 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define OPTCODE_LENGTH 7
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -32,7 +33,25 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int line_number,
+			  const char *s __attribute__((__unused__)));
 } instruction_t;
 
+void free_stack(stack_t **);
+stack_t *push_stack(stack_t **, int);
+stack_t *pop_stack(stack_t **);
+void print_stack(const stack_t *, int);
+int stack_length(const stack_t *);
+/* utils */
+int _isdigit(const char *);
+
+/* instructions */
+void push(stack_t **, unsigned int, __attribute__((__unused__)) const char *);
+void pall(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
+void pint(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
+void pop(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
+void swap(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
+void add(stack_t **, unsigned int line_number, __attribute__((__unused__)) const char *);
+/* monty */
+void monty(FILE *file, stack_t **stack);
 #endif
