@@ -21,7 +21,10 @@ void monty(FILE *file, stack_t **stack, instruction_t instructions[])
 		memset(buffer, 0, sizeof(char) * 1024);
 		fscanf(file, " %[^\n]", buffer);
 		if (!*buffer)
+		{
+			line++;
 			continue;
+		}
 		index = 0;
 		opcode = strtok(buffer, " ");
 		while (index < OPTCODE_LENGTH)
